@@ -6,6 +6,19 @@
         public int age { get; set; }
         public int legs { get; set; }
 
+        public Animal()
+        {
+            name = "";
+            age = 0;
+            legs = 0;
+        }
+
+        public Animal(string name, int age, int legs)
+        {
+            this.name = name;
+            this.age = age;
+            this.legs = legs;
+        }
     }
     public void Speak()
     {
@@ -14,6 +27,11 @@
     }
     public class Dog : Animal
     {
+        double wings;
+        public Dog(string name, int age, int legs, double wings) : base(name, age, legs) 
+        {
+            this.wings = wings;
+        }
         public void Bark()
         {
             Console.Write("bark bark");
